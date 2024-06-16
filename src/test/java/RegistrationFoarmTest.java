@@ -21,11 +21,15 @@ public class RegistrationFoarmTest {
 
     @Test
     void fillFormTests() {
-        open("/automation-practice-form");
+        open("/automation-practice-form");//открыть страницу
+        $(".text-center").shouldHave(text("Practice Form"));
         $("#firstName").setValue("Elena");
         $("#lastName").setValue("Kul");
         $("#userEmail").setValue("example@example.com");
-        $("#genterWrapper").$(byText("Female")).click();
+        $("#genterWrapper").$(byText("Female")).click();// нашли ид с текстом
+        //$("#gender-radio-3").parent.click// нашли элемент и поднялись к его родителю
+        //$("label[for=gender-radio-1]".click;// нашли по элементу lable
+
         $("#userNumber").setValue("8999111663");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("1986");
